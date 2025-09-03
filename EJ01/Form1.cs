@@ -20,7 +20,7 @@ namespace EJ01
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AlumnosBD bd = new AlumnosDB();
+            AlumnosBD bd = new AlumnosBD();
             bool conectado = bd.ProbarConexion();
 
             if (conectado)

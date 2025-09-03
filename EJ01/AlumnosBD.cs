@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EJ01
 {
-    internal class AlumnosBD
+    public class AlumnosBD
     {
     }
 }
