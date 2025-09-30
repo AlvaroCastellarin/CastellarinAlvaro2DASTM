@@ -15,6 +15,47 @@ namespace EJ01
         public Form1()
         {
             InitializeComponent();
+            //prueba();
+            CargaDGV();
         }
+        AlumnosDB db = new AlumnosDB();
+        /* void prueba()
+         {
+             bool p = db.prueba();
+             if (p == true) MessageBox.Show("Conexion exitosa");
+             else MessageBox.Show("error");
+         }*/
+
+        void CargaDGV()
+        {
+            dgvAlumnos.DataSource = db.ListaAlumnos();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            formAM form = new formAM();
+            form.ShowDialog();
+            CargaDGV();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int? l = (int)ObtenerLegajo();
+            try
+            {
+                if (l != null) 
+                {
+                    db.BajaAlumno((int)l);
+                    CargaDGV(); 
+                }
+            }
+            catch (Exception ex) {throw new Exception("Error: " +  ex.Message);}
+        }
+    #region Helper 
+        int? ObtenerLegajo()
+        {
+            int l = int.Parse(dgvAlumnos.Rows[dgvAlumnos.CurrentRow.Index].Cells[0].Value.ToString());
+            return l;
+        }
+        #endregion
     }
 }
