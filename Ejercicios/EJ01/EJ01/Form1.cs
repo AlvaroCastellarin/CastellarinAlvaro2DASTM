@@ -32,7 +32,7 @@ namespace EJ01
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            formAM form = new formAM();
+            formAM form = new formAM(null);
             form.ShowDialog();
             CargaDGV();
         }
@@ -50,11 +50,27 @@ namespace EJ01
             }
             catch (Exception ex) {throw new Exception("Error: " +  ex.Message);}
         }
-    #region Helper 
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int? l = ObtenerLegajo();
+              
+                if (l != null)
+                {
+                    formAM frm = new formAM(l);
+                    frm.ShowDialog();
+                    CargaDGV();
+                }
+
+        }
+        #region Helper 
         int? ObtenerLegajo()
         {
-            int l = int.Parse(dgvAlumnos.Rows[dgvAlumnos.CurrentRow.Index].Cells[0].Value.ToString());
-            return l;
+            try
+            {
+                return int.Parse(dgvAlumnos.Rows[dgvAlumnos.CurrentRow.Index].Cells[0].Value.ToString()); ;
+            }
+            catch { return null; }
         }
         #endregion
     }

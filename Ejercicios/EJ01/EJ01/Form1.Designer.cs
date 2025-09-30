@@ -40,6 +40,8 @@
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlumnos.Location = new System.Drawing.Point(12, 30);
             this.dgvAlumnos.Name = "dgvAlumnos";
+            this.dgvAlumnos.ReadOnly = true;
+            this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlumnos.Size = new System.Drawing.Size(473, 193);
             this.dgvAlumnos.TabIndex = 0;
             // 
@@ -61,6 +63,7 @@
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 

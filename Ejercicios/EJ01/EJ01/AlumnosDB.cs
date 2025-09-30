@@ -43,6 +43,29 @@ namespace EJ01
                 catch (Exception ex) { throw new Exception("Error: " + ex.Message); }
             }
         }
+        public Alumno ObtenerAlumno(int l)
+        {
+            string Query = "SELECT legajo, nombre, edad FROM Alumnos " + "WHERE legajo = @legajo";
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                SqlCommand comando = new SqlCommand(Query, conexion);
+                comando.Parameters.AddWithValue("@legajo", l);
+                try
+                {
+                    conexion.Open();
+                    SqlDataReader lec = comando.ExecuteReader();
+                    lec.Read();
+                    Alumno a = new Alumno();
+                    a.legajo = lec.GetInt32(0);
+                    a.nombre = lec.GetString(1);
+                    a.edad = lec.GetInt32(2);
+                    lec.Close();
+                    conexion.Close();
+                    return a;
+                }
+                catch (Exception ex) { throw new Exception("Error: " + ex.Message ); }
+            }
+        }
         public void AltaAlumno(string n, int e)
         {
             string Query = "INSERT INTO Alumnos(nombre, edad) VALUES" + " (@nombre, @edad)";
@@ -68,6 +91,24 @@ namespace EJ01
                 SqlCommand comando = new SqlCommand(Query, conexion);
                 comando.Parameters.AddWithValue("@legajo", l);
                 try { conexion.Open(); comando.ExecuteNonQuery(); conexion.Close(); }
+                catch (Exception ex) { throw new Exception("Error: " + ex.Message); }
+            }
+        }
+        public void ModifcaAlumno(string n, int e, int l)
+        {
+            string Query = "UPDATE Alumnos SET nombre=@nombre, edad=@edad" + " WHERE legajo=@legajo";
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                SqlCommand comando = new SqlCommand(Query, conexion);
+                comando.Parameters.AddWithValue("@legajo", l);
+                comando.Parameters.AddWithValue("@edad", e);
+                comando.Parameters.AddWithValue("@nombre", n);
+                try
+                {
+                    conexion.Open();
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                }
                 catch (Exception ex) { throw new Exception("Error: " + ex.Message); }
             }
         }
