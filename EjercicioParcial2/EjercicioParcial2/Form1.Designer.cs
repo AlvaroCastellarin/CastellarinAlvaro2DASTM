@@ -42,6 +42,8 @@
             dgv1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv1.Location = new Point(12, 37);
             dgv1.Name = "dgv1";
+            dgv1.ReadOnly = true;
+            dgv1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv1.Size = new Size(745, 164);
             dgv1.TabIndex = 0;
             // 
@@ -63,6 +65,7 @@
             btnBaja.TabIndex = 2;
             btnBaja.Text = "Baja";
             btnBaja.UseVisualStyleBackColor = true;
+            btnBaja.Click += btnBaja_Click;
             // 
             // btnModificar
             // 

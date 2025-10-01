@@ -66,7 +66,22 @@ namespace EjercicioParcial2
                     conexion.Close();
                 }
                 catch { throw; }
-
+            }
+        }
+        public void BajaSocio(int id)
+        {
+            string query = "delete from Socios where id=@id";
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@id", id);
+                try
+                {
+                    conexion.Open();
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                }
+                catch { throw; }
             }
         }
     }
