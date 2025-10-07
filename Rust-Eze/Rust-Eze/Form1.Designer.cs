@@ -210,7 +210,7 @@
             "Buenos Aires",
             "Cordoba",
             "Rosario"});
-            this.cmbSucursal.Location = new System.Drawing.Point(720, 76);
+            this.cmbSucursal.Location = new System.Drawing.Point(738, 82);
             this.cmbSucursal.Name = "cmbSucursal";
             this.cmbSucursal.Size = new System.Drawing.Size(121, 21);
             this.cmbSucursal.TabIndex = 12;
