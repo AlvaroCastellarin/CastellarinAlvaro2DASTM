@@ -10,7 +10,7 @@ namespace GestionSocios
 {
     public class GestionSocios
     {
-        private string cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=club;Integrated Security=True;TrustServerCertificate=True;";
+        private string cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=Club;Integrated Security=True;TrustServerCertificate=True;";
         public bool prueba()
         {
             try
