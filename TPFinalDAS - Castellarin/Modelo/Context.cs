@@ -11,19 +11,11 @@ namespace Modelo
         public DbSet<Sucursal> Sucursales { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
-
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Mayorista> ClientesMayoristas { get; set; }
-        public DbSet<Minorista> ClientesMinoristas { get; set; }
-
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<DetalleVenta> DetallesVenta { get; set; }
         public DbSet<Factura> Facturas { get; set; }
-
         public DbSet<MetodoPago> MetodosPago { get; set; }
-        public DbSet<Efectivo> Efectivos { get; set; }
-        public DbSet<Tarjeta> Tarjetas { get; set; }
-        public DbSet<Transferencia> Transferencias { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlServer(conexion);

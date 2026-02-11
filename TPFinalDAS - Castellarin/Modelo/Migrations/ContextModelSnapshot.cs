@@ -8,7 +8,7 @@ using Modelo;
 
 #nullable disable
 
-namespace Entidades.Migrations
+namespace Modelo.Migrations
 {
     [DbContext(typeof(Context))]
     partial class ContextModelSnapshot : ModelSnapshot

@@ -9,10 +9,10 @@ using Modelo;
 
 #nullable disable
 
-namespace Entidades.Migrations
+namespace Modelo.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20260211211025_InitialCreate")]
+    [Migration("20260211220517_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
