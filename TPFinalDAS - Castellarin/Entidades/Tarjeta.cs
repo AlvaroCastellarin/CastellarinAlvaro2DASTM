@@ -9,6 +9,6 @@ namespace Entidades
     public class Tarjeta : MetodoPago
     {
         public int cuotas { get; set; }
-        public decimal interes { get; set; } = 0.05m; // Interés del 5% para pagos con tarjeta de crédito en cuotas
+        public decimal interes { get; set; }
     }
 }

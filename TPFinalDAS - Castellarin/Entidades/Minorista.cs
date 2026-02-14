@@ -8,6 +8,5 @@ namespace Entidades
 {
     public class Minorista : Cliente
     {
-        public int cuil { get; set; }
     }
 }
