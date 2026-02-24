@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Tarjeta : MetodoPago
     {
-        public int cuotas { get; set; }
-        public decimal interes { get; set; }
+        public int Cuotas { get; set; }
+        public decimal Interes { get; set; }
     }
 }

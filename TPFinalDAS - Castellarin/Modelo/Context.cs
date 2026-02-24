@@ -16,6 +16,7 @@ namespace Modelo
         public DbSet<DetalleVenta> DetallesVenta { get; set; }
         public DbSet<Factura> Facturas { get; set; }
         public DbSet<MetodoPago> MetodosPago { get; set; }
+        public DbSet<Vendedor> Vendedores {  get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlServer(conexion);
@@ -38,28 +39,17 @@ namespace Modelo
                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<DetalleVenta>()
-                .Property(d => d.precio_unitario)
+                .Property(d => d.Precio_unitario)
                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<DetalleVenta>()
-                .Property(d => d.subtotal)
+                .Property(d => d.Subtotal)
                 .HasPrecision(18, 2);
 
-            modelBuilder.Entity<Efectivo>()
-                .Property(e => e.descuento_efectivo)
-                .HasPrecision(5, 2);
-
-            modelBuilder.Entity<Transferencia>()
-                .Property(t => t.descuento_transferencia)
-                .HasPrecision(5, 2);
-
             modelBuilder.Entity<Tarjeta>()
-                .Property(t => t.interes)
+                .Property(t => t.Interes)
                 .HasPrecision(5, 2);
 
-            modelBuilder.Entity<Mayorista>()
-                .Property(m => m.descuento)
-                .HasPrecision(5, 2);
         }
        
 

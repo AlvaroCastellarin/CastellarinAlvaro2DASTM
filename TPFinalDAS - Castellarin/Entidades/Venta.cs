@@ -9,8 +9,10 @@ public class Venta
 
     public int SucursalId { get; set; }
     public Sucursal sucursal { get; set; }
+    public int VendedorId { get; set; }
+    public Vendedor Vendedor { get; set; }
+    public DateTime Fecha { get; set; }
+    public bool pagada { get; set; } = false;
 
-    public List<DetalleVenta> detalleVenta { get; set; } = new();
-
-    public Factura factura { get; set; }
+    public List<DetalleVenta> Detalles { get; set; } = new();
 }

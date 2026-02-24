@@ -8,6 +8,5 @@ namespace Entidades
 {
     public class Transferencia : MetodoPago
     {
-        public decimal descuento_transferencia { get; set; } = 0.05m; // Descuento del 5% para pagos por transferencia bancaria
     }
 }

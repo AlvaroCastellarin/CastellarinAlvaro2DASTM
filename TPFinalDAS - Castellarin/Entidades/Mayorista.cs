@@ -8,6 +8,5 @@ namespace Entidades
 {
     public class Mayorista : Cliente
     {
-        public decimal descuento { get; set; } = 0.10m; // Descuento del 10% para mayoristas
     }
 }

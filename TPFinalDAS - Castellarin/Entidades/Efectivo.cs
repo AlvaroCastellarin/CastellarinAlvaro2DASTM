@@ -8,6 +8,5 @@ namespace Entidades
 {
     public class Efectivo : MetodoPago
     {
-        public decimal descuento_efectivo { get; set; } = 0.10m; // Descuento del 10% para pagos en efectivo
     }
 }

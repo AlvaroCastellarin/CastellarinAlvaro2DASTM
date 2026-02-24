@@ -61,6 +61,11 @@ namespace Modelo
             Context.Ventas.Add(venta);
             Context.SaveChanges();
         }
+        public void ModificarV(Venta venta)
+        {
+            Context.Ventas.Update(venta);
+            Context.SaveChanges();
+        }
         public IReadOnlyCollection<DetalleVenta> ListarDV()
         {
             return Context.DetallesVenta.ToList().AsReadOnly();
@@ -124,6 +129,30 @@ namespace Modelo
         public void AgregarMP(MetodoPago metodoPago)
         {
             Context.MetodosPago.Add(metodoPago);
+            Context.SaveChanges();
+        }
+        public void ModificarMP (MetodoPago metodoPago)
+        {
+            Context.MetodosPago.Update(metodoPago);
+            Context.SaveChanges();
+        }
+        public IReadOnlyCollection<Vendedor> ListarVnd()
+        {
+            return Context.Vendedores.ToList().AsReadOnly();
+        }
+        public void AgregarVnd(Vendedor vendedor)
+        {
+            Context.Vendedores.Add(vendedor);
+            Context.SaveChanges();
+        }
+        public void ModificarVnd(Vendedor vendedor)
+        {
+            Context.Vendedores.Update(vendedor);
+            Context.SaveChanges();
+        }
+        public void EliminarVnd(Vendedor vendedor)
+        {
+            Context.Vendedores.Remove(vendedor);
             Context.SaveChanges();
         }
     }
